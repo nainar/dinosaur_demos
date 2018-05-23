@@ -1,1 +1,1 @@
-# dinosaur_demos
+# Demos for DinosaurJS 2018
