@@ -74,10 +74,10 @@ function paintCycler() {
 function fontCycler() {
 	fontPos = (fontPos+1)%fontOptions.length;
 	const newFontArgs = fontOptions[fontPos];
-	fontpicker.innerText = newFontArgs.text;
+	fontPicker.innerText = newFontArgs.text;
 	for (key in newFontArgs.style) {
 		content.style.setProperty(key, newFontArgs.style[key]);
-		fontpicker.style.setProperty(key, newFontArgs.style[key]);
+		fontPicker.style.setProperty(key, newFontArgs.style[key]);
 	}
 
 }

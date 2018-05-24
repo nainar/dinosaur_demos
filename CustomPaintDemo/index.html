@@ -6,14 +6,18 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<script type="text/javascript" src="demo.js"></script>
 	<style type="text/css">
+		html {
+			--first-painter: paint(backgroundpainter, magenta, deeppink);
+		}
+
 		#background {
-			background: paint(backgroundpainter, magenta, deeppink);
+			background: var(--first-painter);
 		}
 
 		#colorpicker {
 			width: 150px;
 			height: 150px;
-			background: paint(backgroundpainter, magenta, deeppink);
+			background: var(--first-painter);
 			border: 5px solid white;
 			border-radius: 50%;
 			position: absolute;
@@ -48,7 +52,7 @@
 			float: left;
 		}
 
-		#fontpicker {
+		#fontPicker {
 			height: 5vh;
 			line-height: 5vh;
 			font-size: 4vh;
@@ -70,11 +74,11 @@
 	</style>
 </head>
 <body id="background">
-	<div id="parentFontPicker">
-		<div id="fontpicker" onclick="fontCycler()">CLASSIC</div>
-	</div>
 	<div id="parentContent">
 	  <div id="content" contenteditable="true" placeholder="TAP TO TYPE"></div>
+	</div>
+	<div id="parentFontPicker">
+		<div id="fontPicker" onclick="fontCycler()">CLASSIC</div>
 	</div>
 	<div id="colorpicker" onclick="paintCycler()"></div>	
 </body>
