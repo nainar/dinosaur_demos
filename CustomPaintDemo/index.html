@@ -132,7 +132,6 @@
 		const newFontArgs = fontOptions[fontPos];
 		fontpicker.innerText = newFontArgs.text;
 		for (key in newFontArgs.style) {
-			console.log(key, newFontArgs.style[key])
 			content.style.setProperty(key, newFontArgs.style[key]);
 			fontpicker.style.setProperty(key, newFontArgs.style[key]);
 		}
