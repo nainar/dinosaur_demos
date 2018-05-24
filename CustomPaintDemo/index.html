@@ -22,6 +22,7 @@
 		}
 
 		#parentContent {
+			position: absolute;
 			display: table;
 			width:100vw;
 			height: 100vh;
@@ -41,8 +42,13 @@
 			color: white;
 		}
 
+		#parentFontPicker {
+			position: relative;
+			left: 50%;
+			float: left;
+		}
+
 		#fontpicker {
-			width: 44vw;
 			height: 5vh;
 			line-height: 5vh;
 			font-size: 4vh;
@@ -50,10 +56,11 @@
 			text-align:center;
 			vertical-align: middle;
 			color: white;
-			position: absolute;
-			left: 28vw;
 			border: 5px solid white;
 			border-radius: 10%;
+			position: relative;
+			left: -50%;
+			float: left;
 		}
 
 		[contenteditable=true]:empty::before {
@@ -63,8 +70,10 @@
 	</style>
 </head>
 <body id="background">
-	<div id="fontpicker" onclick="fontCycler()">CLASSIC</div>
-	<div style="" id="parentContent">
+	<div id="parentFontPicker">
+		<div id="fontpicker" onclick="fontCycler()">CLASSIC</div>
+	</div>
+	<div id="parentContent">
 	  <div id="content" contenteditable="true" placeholder="TAP TO TYPE"></div>
 	</div>
 	<div id="colorpicker" onclick="paintCycler()"></div>	
