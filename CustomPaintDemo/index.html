@@ -1,57 +1,73 @@
-<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-<script src="https://unpkg.com/css-paint-polyfill/dist/css-paint-polyfill.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Paint Demo</title>
+	<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<!-- <script src="https://unpkg.com/css-paint-polyfill/dist/css-paint-polyfill.js"></script> -->
 
-<style type="text/css">
-	#background {
-		background: paint(backgroundpainter, magenta, deeppink);
-	}
+	<style type="text/css">
+		#background {
+			background: paint(backgroundpainter, magenta, deeppink);
+		}
 
-	#colorpicker {
-		width: 100px;
-		height: 100px;
-		background: paint(backgroundpainter, magenta, deeppink);
-		border: 5px solid white;
-		border-radius: 50%;
-		position: absolute;
-		bottom: 5vh;
-		left: 5vh;
-	}
+		#colorpicker {
+			width: 100px;
+			height: 100px;
+			background: paint(backgroundpainter, magenta, deeppink);
+			border: 5px solid white;
+			border-radius: 50%;
+			position: absolute;
+			bottom: 5vh;
+			left: 5vh;
+		}
 
-	#content {
-		width: 100vw;
-		height: 10vh;
-		position: absolute;
-		top: 40vh;
-		background: transparent;
-		font: 8vh 'Roboto';
-		color: white;
-		text-align:center;
-		border: 0;
-	}
+		#parentContent {
+			display: table;
+			width:100vw;
+			height: 100vh;
+		}
 
-	::placeholder {
-		color: white;
-	}
+		#content {
+			background: transparent;
+			font: 8vh 'Roboto';
+			color: white;
+			text-align:center;
+			display: table-cell; 
+			vertical-align: middle;
+			word-break: break-all;
+		}
 
-	#fontpicker {
-		width: 22vw;
-		height: 3vh;
-		line-height: 3vh;
-		font-size: 2vh; 
-		font-family: "Roboto";
-		text-align:center;
-		vertical-align: middle;
-		color: white;
-		position: absolute;
-		left: 39vw;
-		border: 5px solid white;
-		border-radius: 10%;
-	}
-</style>
+		::placeholder {
+			color: white;
+		}
+
+		#fontpicker {
+			width: 22vw;
+			height: 3vh;
+			line-height: 3vh;
+			font-size: 2vh; 
+			font-family: "Roboto";
+			text-align:center;
+			vertical-align: middle;
+			color: white;
+			position: absolute;
+			left: 39vw;
+			border: 5px solid white;
+			border-radius: 10%;
+		}
+
+		[contenteditable=true]:empty::before {
+			content: attr(placeholder);
+			display: block; /* For Firefox */
+		}
+	</style>
+</head>
 <body id="background">
 	<div id="fontpicker" onclick="fontCycler()">CLASSIC</div>
-	<input type="text" id="content" placeholder="TAP TO TYPE">
+	<div style="" id="parentContent">
+	  <div id="content" contenteditable="true" placeholder="TAP TO TYPE"></div>
+	</div>
 	<div id="colorpicker" onclick="paintCycler()"></div>	
 </body>
 
@@ -138,3 +154,4 @@
 
 	}
 </script>
+</html>
