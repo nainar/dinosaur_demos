@@ -14,13 +14,14 @@
 		border-radius: 50%;
 		position: absolute;
 		bottom: 5vh;
-		left: 5vh;
+		left: 5vw;
 	}
 
 	#content {
 		width: 100vw;
+		height: 10vh;
 		position: absolute;
-		top: 42.5vh;
+		top: 40vh;
 		background: transparent;
 		font: 8vh 'Roboto';
 		color: white;
@@ -33,11 +34,16 @@
 	}
 
 	#fontpicker {
+		width: 15vw;
+		height: 3vh;
+		line-height: 3vh;
 		font-size: 2vh; 
 		font-family: "Roboto";
+		text-align:center;
+		vertical-align: middle;
 		color: white;
 		position: absolute;
-		left: 25vh;
+		left: 42.5vw;
 		border: 5px solid white;
 		border-radius: 10%;
 	}
@@ -59,32 +65,36 @@
 	{
 		text: 'CLASSIC',
 		style: {
-			'font-family': "Roboto"
+			'font-family': "Roboto",
+			'text-shadow': 'none'
 		}
 	},
 	{
 		text: 'MODERN',
 		style: {
 			'font-family': "'Open Sans Condensed', sans-serif",
+			'text-shadow': 'none'
 		}
 	},
 	{
 		text: 'NEON',
 		style: {
 			'font-family': '"Cedarville Cursive", cursive',
-			'text-shadow': 'deeppink 1px 0 10px'			
+			'text-shadow': '#32CD32 10px 0 10px'			
 		}
 	},
 	{
 		text: 'TYPEWRITER',
 		style: {
 			'font-family': 'Courier New',
+			'text-shadow': 'none'
 		}
 	},
 	{
 		text: 'STRONG',
 		style: {
 			'font-family': 'small-caps bold sans-serif',
+			'text-shadow': 'none'
 		}
 	}];
 
